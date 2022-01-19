@@ -1,0 +1,41 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="container mt-3 px-2">
+  <div class="mb-3 d-flex justify-content-between align-items-center">
+    <div class="position-relative">
+      <button routerLink="/create-course" type="button" class="btn btn-outline-primary">Add New Course</button>
+    </div>
+  </div>
+
+
+
+  <div class="table-responsive">
+    <table class="table table-responsive table-borderless">
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" width="20%">Title</th>
+          <th scope="col" width="10%">Status</th>
+          <th scope="col" width="20%">Course Link</th>
+          <th scope="col" width="20%">Platform</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{course.name}}</td>
+          <td [ngStyle]="{'color':course.isCompleted === false ? 'red' : 'green' }">
+            {{course.isCompleted}}
+          </td>
+          <td><a href={{course.link}} target="_blank"> {{course.link}} </a></td>
+          <td>{{course.platform}}</td>
+          <td><i class="fas fa-trash-alt" style="color: red; cursor: pointer;" (click)="deleteCourse(course._id)"></i>
+          </td>
+          <td><i class="fas fa-edit" style="color: blue; cursor: pointer" (click)="editCourse(course._id)"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

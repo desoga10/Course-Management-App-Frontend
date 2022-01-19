@@ -1,0 +1,31 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="contain">
+  <div class="row d-flex align-items-center justify-content-center">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col-md-6">
+      <div class="card px-5 py-5">
+        <div class="form-input">
+          <input type="text" class="form-control" placeholder="Email address" formControlName="email">
+          <i class="mt-2 text-danger"
+            *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+            Email is required and must be valid
+          </i>
+        </div>
+        <div class="form-input">
+          <input type="password" class="form-control" placeholder="password" formControlName="password">
+          <i class="mt-2 text-danger"
+            *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+            Password Must Be at Least 6 Characters
+          </i>
+        </div>
+        <button [disabled]="loginForm.invalid" class="btn btn-success mt-4 signup">Login</button>
+        <div class="text-center mt-4">
+          <i>Don't have an account?</i>
+          <a routerLink="/register" class="text-decoration-none"> Register</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

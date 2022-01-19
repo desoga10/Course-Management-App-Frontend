@@ -1,0 +1,65 @@
+<div class="container contain rounded shadow-sm">
+  <form [formGroup]="createForm">
+    <div class="row">
+      <div class="col-md-6 col-12 mb-4">
+        <div class="form-control d-flex flex-column">
+          <p class="h-blue">Course Title</p>
+          <input class="inputbox" placeholder="Course Title" type="text" formControlName="name" #name>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 mb-4">
+        <div class="form-control d-flex flex-column">
+          <p class="h-blue">Platform</p>
+          <input class="inputbox" placeholder="Platform" type="text" formControlName="platform" #platform>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-12 mb-4">
+        <div class="form-control d-flex flex-column">
+          <p class="h-blue">Description</p>
+          <textarea class="inputbox" formControlName="description" #description></textarea>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12 mb-4">
+        <div class="form-control d-flex flex-column">
+          <p class="h-blue">Course Link</p>
+          <input class="inputbox" type="text" formControlName="link" #link>
+        </div>
+      </div>
+    </div>
+
+
+
+    <p class="h-blue">Course Status</p>
+    <div class="row">
+      <div class="col-md-2 pe-0 col-sm-12">
+        <div class="btn radio-btn mb-3">
+
+          <label class="radio">
+            <input type="radio" value="true" name="isCompleted" formControlName="isCompleted" #isCompleted>
+            Completed <span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="col-md-2 pe-0 col-sm-12">
+        <div class="btn radio-btn mb-3">
+          <label class="radio">
+            <input type="radio" value="false" name="isCompleted" formControlName="isCompleted" #isCompleted> Pending
+            <span></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <button type="submit" (click)="addCourse()" class="btn btn-primary form-control text-center"
+      [disabled]="createForm.invalid">Add Course
+      Info</button>
+  </form>
+</div>

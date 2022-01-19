@@ -1,0 +1,27 @@
+<div class="contain">
+  <div class="row d-flex align-items-center justify-content-center">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-md-6">
+      <div class="card px-5 py-5">
+        <div class="form-input">
+          <input type="text" class="form-control" placeholder="Email address" formControlName="email">
+          <i class="mt-2 text-danger"
+            *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+            Email is required and must be valid
+          </i>
+        </div>
+        <div class="form-input">
+          <input type="password" class="form-control" placeholder="password" formControlName="password">
+          <i class="mt-2 text-danger"
+            *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+            Password Must Be at Least 7 Characters
+          </i>
+        </div>
+        <button [disabled]="registerForm.invalid" class="btn btn-primary mt-4 signup">Register</button>
+        <div class="text-center mt-4">
+          <i>Already a member?</i>
+          <a routerLink="/login" class="text-decoration-none"> Login</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
