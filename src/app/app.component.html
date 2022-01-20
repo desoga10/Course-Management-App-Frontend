@@ -7,8 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" routerLink="/create-course" routerLinkActive="active">Create</a>
-        <a class="nav-link" routerLink="/list-course" routerLinkActive="active">List</a>
+        <a class="nav-link" routerLink="/create-course" *ngIf="authService.isLoggedIn"
+          routerLinkActive="active">Create</a>
+        <a class="nav-link" routerLink="/list-course" *ngIf="authService.isLoggedIn" routerLinkActive="active">List</a>
         <a class="nav-link" *ngIf="!authService.isLoggedIn" routerLink="/login" routerLinkActive="active">Login</a>
         <a class="nav-link" *ngIf="!authService.isLoggedIn" routerLink="/register"
           routerLinkActive="active">Register</a>
