@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CourseService {
-  private baseURL = 'http://localhost:5000';
+  private baseURL = 'https://course-mamagement-app.herokuapp.com';
 
   constructor(private http: HttpClient) {}
 
