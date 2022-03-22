@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseURL = 'http://localhost:5000';
+  private baseURL = 'https://course-mamagement-app.herokuapp.com';
 
   constructor(private http: HttpClient, private router: Router) {}
 
