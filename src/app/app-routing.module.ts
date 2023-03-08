@@ -12,17 +12,17 @@ const routes: Routes = [
   {
     path: 'create-course',
     component: CreateCourseComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'edit-course/:id',
     component: EditCourseComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'list-course',
     component: CourseListComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

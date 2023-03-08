@@ -4,14 +4,14 @@
       <div class="col-md-6 col-12 mb-4">
         <div class="form-control d-flex flex-column">
           <p class="h-blue">Course Title</p>
-          <input class="inputbox" placeholder="Course Title" type="text" formControlName="name" #name>
+          <input formControlName="name" class="inputbox" placeholder="Course Title" type="text">
         </div>
       </div>
 
       <div class="col-md-6 col-12 mb-4">
         <div class="form-control d-flex flex-column">
           <p class="h-blue">Platform</p>
-          <input class="inputbox" placeholder="Platform" type="text" formControlName="platform" #platform>
+          <input formControlName="platform" class="inputbox" placeholder="Platform" type="text">
         </div>
       </div>
     </div>
@@ -20,14 +20,14 @@
       <div class="col-md-6 col-12 mb-4">
         <div class="form-control d-flex flex-column">
           <p class="h-blue">Description</p>
-          <textarea class="inputbox" formControlName="description" #description></textarea>
+          <textarea formControlName="description" class="inputbox"></textarea>
         </div>
       </div>
 
       <div class="col-md-6 col-12 mb-4">
         <div class="form-control d-flex flex-column">
           <p class="h-blue">Course Link</p>
-          <input class="inputbox" type="text" formControlName="link" #link>
+          <input formControlName="link" class="inputbox" type="text">
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="btn radio-btn mb-3">
 
           <label class="radio">
-            <input type="radio" value="true" name="isCompleted" formControlName="isCompleted" #isCompleted>
+            <input formControlName="isCompleted" type="radio" value="true" name="isCompleted">
             Completed <span>
             </span>
           </label>
@@ -51,15 +51,16 @@
       <div class="col-md-2 pe-0 col-sm-12">
         <div class="btn radio-btn mb-3">
           <label class="radio">
-            <input type="radio" value="false" name="isCompleted" formControlName="isCompleted" #isCompleted> Pending
+            <input formControlName="isCompleted" type="radio" value="false" name="isCompleted"> Pending
             <span></span>
           </label>
         </div>
       </div>
 
     </div>
-    <button type="submit" (click)="updateCourse()" class="btn btn-primary form-control text-center"
-      [disabled]="updateForm.invalid || updateForm.pristine">Update Course
-      Info</button>
+    <button (click)="updateCourse()" type="submit" class="btn btn-primary form-control text-center"
+      [disabled]="updateForm.invalid || updateForm.pristine">
+      Update CourseInfo
+    </button>
   </form>
 </div>

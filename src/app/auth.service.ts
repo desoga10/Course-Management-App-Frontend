@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseURL = 'https://course-mamagement-app.herokuapp.com';
+  private baseURL = 'https://course-management-app-backend.onrender.com';
 
   constructor(private http: HttpClient, private router: Router) {}
 

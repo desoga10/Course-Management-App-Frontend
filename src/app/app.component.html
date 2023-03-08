@@ -15,7 +15,6 @@
           routerLinkActive="active">Register</a>
         <a class="nav-link" *ngIf="authService.isLoggedIn" routerLink="/register" routerLinkActive="active"
           (click)="authService.logoutUser()">Logout</a>
-
       </div>
     </div>
   </div>
